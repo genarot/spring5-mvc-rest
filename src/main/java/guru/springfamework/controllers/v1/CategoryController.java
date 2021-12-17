@@ -3,7 +3,7 @@
  * Proprietary and confidential
  * The work belongs to the author's employer under work made for hire principles.
  */
-package guru.springfamework.controllers;
+package guru.springfamework.controllers.v1;
 
 import guru.springfamework.api.v1.model.CategoryDTO;
 import guru.springfamework.api.v1.model.CategoryListDTO;

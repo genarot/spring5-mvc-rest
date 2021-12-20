@@ -3,12 +3,15 @@ package guru.springfamework.controllers.v1;
 import guru.springfamework.api.v1.model.CustomerDTO;
 import guru.springfamework.api.v1.model.CustomerListDTO;
 import guru.springfamework.services.CustomerService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by jt on 9/27/17.
  */
+@Tag(name = "customer-controller", description = "This is my customer controller")
 @RestController
 @RequestMapping(CustomerController.BASE_URL)
 public class CustomerController {
@@ -21,9 +24,10 @@ public class CustomerController {
         this.customerService = customerService;
     }
 
+    @Operation(summary = "This will get a list of customers.", description = "These are some notes about API")
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public CustomerListDTO getListofCustomers() {
+    public CustomerListDTO getListOfCustomers() {
 
         return new CustomerListDTO(customerService.getAllCustomers());
     }
